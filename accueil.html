@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Accueil</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li class="active"><a href="accueil.html">Présentation</a></li>
+                <li><a href="skill.html">Mes compétences</a></li>
+                <li><a href="projet.html">Mes projets</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1><span class="pink">Mon </span><span class="orange">Portfolio</span></span></h1>
+        <p class="subtitle">Mathys Gallienne</p>
+    </section>
+
+    <section class="carousel">
+        <div class="carousel-track">
+            <p>Développeur Web</p>
+            <p>Designer UI/UX</p>
+            <p>Créatif & Passionné</p>
+            <p>Étudiant en Informatique</p>
+            <p>Développeur Web</p>
+            <p>Designer UI/UX</p>
+            <p>Créatif & Passionné</p>
+            <p>Étudiant en Informatique</p>
+        </div>
+
+        <section class="apropos">
+            <h2 class="title">À propos</h2>
+
+            <div class="carousel-container">
+                <div class="carousel-cards">
+
+                    <div class="card">
+                        <p>
+                            Bonjour, je m'appelle Mathys Gallienne, étudiant en deuxième année de BUT Informatique
+                            à Laval. Je me forme au développement fullstack (HTML, CSS, JavaScript, PHP) et je suis
+                            très curieux à l’idée de découvrir de nouvelles technologies liées au développement web.
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <p>
+                            Je suis à la recherche d’un stage à partir du 13 avril 2026, d’une durée de 8 à 12 semaines,
+                            pouvant être prolongé jusqu’au mois d’août, dans le domaine du développement web,
+                            d’applications ou du test logiciel. Je suis également intéressé par une alternance pour
+                            l’année 2026-2027 d’entrer dans le monde professionnel et d’acquérir de l’expérience en
+                            entreprise.
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <p>
+                            Passionné de jeux vidéo, j’ai eu l’occasion de découvrir le développement et j’ai développé
+                            un fort intérêt pour le code, ainsi que pour le design de pages web et d’interfaces
+                            utilisateur
+                            (UI).
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </section>
+
+    </section>
+
+    <script>
+        const container = document.querySelector(".carousel-container");
+        const dots = document.querySelectorAll(".dot");
+
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        container.addEventListener("mousedown", (e) => {
+            isDown = true;
+            startX = e.pageX - container.offsetLeft;
+            scrollLeft = container.scrollLeft;
+        });
+
+        container.addEventListener("mouseleave", () => isDown = false);
+        container.addEventListener("mouseup", () => isDown = false);
+
+        container.addEventListener("mousemove", (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - container.offsetLeft;
+            const walk = (x - startX) * 1.2;
+            container.scrollLeft = scrollLeft - walk;
+            updateDots();
+        });
+
+        function updateDots() {
+            const index = Math.round(container.scrollLeft / (container.offsetWidth * 0.8));
+            dots.forEach((d, i) => d.classList.toggle("active", i === index));
+        }
+
+        container.addEventListener("mousedown", (e) => {
+            isDown = true;
+            container.classList.add("active");
+            startX = e.pageX - container.offsetLeft;
+            scrollLeft = container.scrollLeft;
+
+            e.preventDefault();
+        });
+
+    </script>
+
+
+</body>
+
+<footer class="footer">
+    <div class="footer-content">
+
+        <p class="footer-line">
+            <img class="icon-loc" src="img/loc.png">
+            52 Rue des Docteurs Calmette et Guérin, <strong>Laval</strong>
+        </p>
+
+        <p class="footer-line">
+            <img class="icon-mes" src="img/mes.png">
+            galliennemathys377@gmail.com
+        </p>
+
+        <div class="socials">
+            <a href="#" class="social-box"><img class="icon-social" src="img/insta.png"></a>
+            <a href="#" class="social-box"><img class="icon-social" src="img/linkedin.png"></a>
+            <a href="#" class="social-box"><img class="icon-social" src="img/linktree.png"></a>
+        </div>
+
+    </div>
+</footer>
+
+</html>
