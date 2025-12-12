@@ -54,9 +54,13 @@
     font-size: 22px;
     color: white;
     text-decoration: none;
+    transition: 0.5s;
 }
 
 .icon-social {
     width: 30px;
     height: 30px;
+}
+.social-box:hover {
+  box-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white;
 }

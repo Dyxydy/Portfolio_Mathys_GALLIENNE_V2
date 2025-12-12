@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Accueil</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
 </head>
 
@@ -17,9 +18,11 @@
                 <li class="active"><a href="accueil.html">Présentation</a></li>
                 <li><a href="skill.html">Mes compétences</a></li>
                 <li><a href="projet.html">Mes projets</a></li>
+                <div class="nav-indicator"></div>
             </ul>
         </nav>
     </header>
+
 
     <section class="hero">
         <h1><span class="pink">Mon </span><span class="orange">Portfolio</span></span></h1>
@@ -122,6 +125,26 @@
             e.preventDefault();
         });
 
+        const navItems = document.querySelectorAll(".navbar li");
+        const indicator = document.querySelector(".nav-indicator");
+
+        function moveIndicator(element) {
+            const rect = element.getBoundingClientRect();
+            const navRect = element.parentElement.getBoundingClientRect();
+
+            indicator.style.width = rect.width + "px";
+            indicator.style.left = (rect.left - navRect.left) + "px";
+        }
+
+        const activeItem = document.querySelector(".navbar li.active");
+        if (activeItem) moveIndicator(activeItem);
+
+        navItems.forEach(item => {
+            item.addEventListener("mouseover", () => moveIndicator(item));
+            item.addEventListener("mouseout", () => moveIndicator(activeItem));
+        });
+
+
     </script>
 
 
@@ -141,9 +164,9 @@
         </p>
 
         <div class="socials">
-            <a href="#" class="social-box"><img class="icon-social" src="img/insta.png"></a>
+            <a href="https://github.com/Dyxydy" class="social-box"><img class="icon-social" src="img/github.png"></a>
             <a href="#" class="social-box"><img class="icon-social" src="img/linkedin.png"></a>
-            <a href="#" class="social-box"><img class="icon-social" src="img/linktree.png"></a>
+            <a href="https://linktr.ee/dyxydy" class="social-box"><img class="icon-social" src="img/linktree.png"></a>
         </div>
 
     </div>

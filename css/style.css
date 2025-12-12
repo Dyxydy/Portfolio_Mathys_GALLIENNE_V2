@@ -5,44 +5,6 @@ body {
     color: white;
 }
 
-.navbar {
-    margin: 30px auto;
-    padding: 8px 20px;
-    width: fit-content;
-    display: flex;
-    align-items: center;
-    background: rgba(255,255,255,0.05);
-    border-radius: 18px;
-    backdrop-filter: blur(8px);
-}
-
-.navbar ul {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-}
-
-.navbar li {
-    padding: 12px 25px;
-    margin-right: 10px;
-    border-radius: 12px;
-    cursor: pointer;
-    font-weight: 500;
-    color: #d4d4d4;
-}
-
-.navbar li.active {
-    background: linear-gradient(90deg, #ff006a, #ffb100);
-    color: white;
-}
-
-.search-icon {
-    font-size: 20px;
-    opacity: 0.8;
-    cursor: pointer;
-}
-
 .hero {
     text-align: center;
     margin-top: 150px;
@@ -129,7 +91,6 @@ header {
     margin-bottom: 40px;
 }
 
-/* --- CONTAINER --- */
 .carousel-container {
     width: 90%;
     margin: auto;
@@ -203,3 +164,5 @@ header {
 .navbar ul li.active a {
     color: white;
 }
+
+
