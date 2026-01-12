@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Culture Générale</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/projet.css">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="accueil.html">Présentation</a></li>
+                <li><a href="skill.html">Mes compétences</a></li>
+                <li><a href="projet.html">Mes projets</a></li>
+                <li><a href="competences.html">Mes évaluations</a></li>
+                <li class="active"><a href="culture.html">Culture générale</a></li>
+                <div class="nav-indicator"></div>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="event-card">
+        <div class="event-left">
+            <h2>
+                <span class="pink">Travail en </span><span class="orange">Culture Générale</span>
+            </h2>
+
+            <p class="date">Travail personnel & réflexion</p>
+
+            <p>
+                Dans le cadre de mon développement personnel et intellectuel, j’ai mené un travail approfondi
+                autour de la culture générale, notamment à travers la lecture et l’analyse de textes
+                à forte portée historique et morale.<br><br><br>
+
+                <strong>Objectifs :</strong><br>
+                • Lire les livres <em>Nombres</em> et <em>Deutéronome</em><br>
+                • Comprendre leur contexte historique et culturel<br><br><br>
+
+                <strong>Travail réalisé :</strong><br>
+                • Lecture attentive et régulière<br>
+                • Prise de notes structurées<br>
+                • Analyse des enseignements principaux<br>
+                • Comparaison avec d’autres textes et références culturelles<br><br><br>
+
+                <strong>Compétences développées :</strong><br>
+                • Réflexion critique et esprit d’analyse<br>
+                • Patience et concentration<br>
+                • Capacité à mettre en perspective des idées complexes<br><br><br>
+
+                <strong>Apports personnels :</strong><br>
+                • Apaisement émotionnel<br>
+                • Sentiment de stabilité et de sécurité<br>
+                • Méditation et introspection<br>
+                • Vision plus optimiste et réfléchie
+            </p>
+        </div>
+    </section>
+
+    <script>
+        const navItems = document.querySelectorAll(".navbar li");
+        const indicator = document.querySelector(".nav-indicator");
+
+        function moveIndicator(element) {
+            const rect = element.getBoundingClientRect();
+            const navRect = element.parentElement.getBoundingClientRect();
+
+            indicator.style.width = rect.width + "px";
+            indicator.style.left = (rect.left - navRect.left) + "px";
+        }
+
+        const activeItem = document.querySelector(".navbar li.active");
+        if (activeItem) moveIndicator(activeItem);
+
+        navItems.forEach(item => {
+            item.addEventListener("mouseover", () => moveIndicator(item));
+            item.addEventListener("mouseout", () => moveIndicator(activeItem));
+        });
+    </script>
+
+</body>
+
+<footer class="footer">
+    <div class="footer-content">
+
+        <p class="footer-line">
+            <img class="icon-loc" src="img/loc.png">
+            52 Rue des Docteurs Calmette et Guérin, <strong>Laval</strong>
+        </p>
+
+        <p class="footer-line">
+            <img class="icon-mes" src="img/mes.png">
+            galliennemathys377@gmail.com
+        </p>
+
+        <div class="socials">
+            <a href="https://github.com/Dyxydy" class="social-box">
+                <img class="icon-social" src="img/github.png">
+            </a>
+            <a href="https://www.linkedin.com/in/mathys-gallienne-456a59399/" class="social-box">
+                <img class="icon-social" src="img/linkedin.png">
+            </a>
+            <a href="https://linktr.ee/dyxydy" class="social-box">
+                <img class="icon-social" src="img/linktree.png">
+            </a>
+        </div>
+
+    </div>
+</footer>
+
+</html>
