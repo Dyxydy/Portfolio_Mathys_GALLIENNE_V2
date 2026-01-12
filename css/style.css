@@ -139,22 +139,6 @@ header {
     background: white;
 }
 
-.carousel-container {
-    cursor: grab;
-    user-select: none; 
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-}
-
-.carousel-container:active {
-    cursor: grabbing;
-}
-
-.carousel-cards, .card, .card p {
-    user-select: none;
-}
-
 .navbar ul li a {
     text-decoration: none;
     color: inherit;
@@ -163,6 +147,12 @@ header {
 
 .navbar ul li.active a {
     color: white;
+}
+
+.know {
+    background: linear-gradient(90deg, #ff006a, #ffb100);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 

@@ -1,0 +1,25 @@
+.carousel-container {
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 10px;
+}
+
+.carousel-cards {
+    display: flex;
+    gap: 20px;
+}
+
+.carousel-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.carousel-container::-webkit-scrollbar-thumb {
+    background-color: #ff006a;
+    border-radius: 4px;
+}
+
+.carousel-container::-webkit-scrollbar-track {
+    background-color: #f0f0f0;
+    border-radius: 4px;
+}

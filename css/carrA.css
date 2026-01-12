@@ -1,0 +1,15 @@
+.carousel-container {
+    cursor: grab;
+    user-select: none; 
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.carousel-container:active {
+    cursor: grabbing;
+}
+
+.carousel-cards, .card, .card p {
+    user-select: none;
+}
